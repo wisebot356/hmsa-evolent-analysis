@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolent/HMSA Prior Authorization Changes — Evidence Analysis</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-elevated: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --border: rgba(148,163,184,0.2);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:var(--bg-primary); color:var(--text-primary); line-height:1.6; }
+        .container { max-width:900px; margin:0 auto; padding:0 1.5rem; }
+        .hero { padding:4rem 1.5rem 3rem; text-align:center; border-bottom:2px solid var(--accent); }
+        .hero h1 { font-size:2.25rem; font-weight:800; margin-bottom:1rem; line-height:1.2; }
+        .hero h1 span { color:var(--danger); }
+        .hero .subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:700px; margin:0 auto 1.5rem; }
+        .badge { display:inline-block; background:var(--danger); color:#fff; font-size:0.8rem; font-weight:700; padding:0.3rem 0.8rem; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:1.5rem; }
+        .alert-box { background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:1.5rem; margin:2rem auto; max-width:750px; text-align:left; }
+        .alert-box h3 { color:var(--danger); font-size:1rem; margin-bottom:0.5rem; }
+        .alert-box p { color:var(--text-secondary); font-size:0.95rem; }
+        .cards { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; padding:3rem 0 4rem; }
+        .card { background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; padding:2rem; transition:transform 0.2s,border-color 0.2s; cursor:pointer; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+        .card:hover { transform:translateY(-4px); border-color:var(--accent); }
+        .card-icon { font-size:2.5rem; margin-bottom:1rem; }
+        .card h2 { font-size:1.25rem; margin-bottom:0.75rem; color:var(--text-primary); }
+        .card p { color:var(--text-secondary); font-size:0.925rem; flex-grow:1; margin-bottom:1rem; }
+        .card .stat { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem; }
+        .card .stat-item { background:var(--bg-elevated); padding:0.4rem 0.75rem; border-radius:6px; font-size:0.8rem; color:var(--text-muted); }
+        .card .stat-item strong { color:var(--danger); }
+        .card .cta { color:var(--accent); font-weight:600; font-size:0.95rem; }
+        .card .cta::after { content:' →'; }
+        .context { padding:2rem 0 3rem; }
+        .context-box { background:var(--bg-secondary); border-radius:12px; padding:2rem; border-left:4px solid var(--warning); }
+        .context-box h2 { font-size:1.15rem; color:var(--warning); margin-bottom:1rem; }
+        .context-box ul { list-style:none; padding:0; }
+        .context-box li { color:var(--text-secondary); font-size:0.95rem; padding:0.4rem 0; padding-left:1.5rem; position:relative; }
+        .context-box li::before { content:'⚠'; position:absolute; left:0; }
+        .footer { background:var(--bg-secondary); padding:2rem 1.5rem; text-align:center; border-top:1px solid var(--border); }
+        .footer p { color:var(--text-muted); font-size:0.85rem; margin-bottom:0.25rem; }
+        .footer a { color:var(--accent); text-decoration:none; }
+        @media(max-width:640px) {
+            .hero h1 { font-size:1.6rem; }
+            .cards { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="badge">Public Interest Investigation</div>
+            <h1>Evolent/HMSA Prior Authorization:<br><span>A Pattern of Restricted Access</span></h1>
+            <p class="subtitle">Two training videos. Same presenter. Same effective date. Same playbook — expanding prior authorization requirements across multiple medical specialties simultaneously, announced only through internal provider webinars with no public notice or legislative review.</p>
+            <div class="alert-box">
+                <h3>⚠ Why This Matters</h3>
+                <p>Effective April 1st 2026, Evolent Health — the third-party company managing utilization review for HMSA — is simultaneously eliminating streamlined access pathways across chiropractic care, occupational therapy, and advanced diagnostic imaging. 94% of physicians nationally report prior authorization delays necessary care. These changes were not disclosed publicly.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cards">
+            <a href="physical-medicine.html" class="card">
+                <div class="card-icon">🦴</div>
+                <h2>Physical Medicine Program</h2>
+                <p>Chiropractic &amp; Occupational Therapy — the 8 unmanaged visits that previously allowed patients immediate access have been eliminated. Every visit after the initial evaluation now requires prior authorization.</p>
+                <div class="stat">
+                    <span class="stat-item"><strong>10</strong> problems found</span>
+                    <span class="stat-item"><strong>10</strong> timestamps</span>
+                </div>
+                <span class="cta">Watch Analysis</span>
+            </a>
+            <a href="imaging.html" class="card">
+                <div class="card-icon">🩻</div>
+                <h2>Advanced Imaging &amp; Cardiac</h2>
+                <p>MRI, CT, PET Scans &amp; Cardiac Diagnostics — all imaging Fastpasses eliminated. Non-cardiologists ordering cardiac studies now face full clinical review. 3-day urgent authorization window with zero extensions.</p>
+                <div class="stat">
+                    <span class="stat-item"><strong>11</strong> problems found</span>
+                    <span class="stat-item"><strong>11</strong> timestamps</span>
+                </div>
+                <span class="cta">Watch Analysis</span>
+            </a>
+        </div>
+
+        <div class="context">
+            <div class="context-box">
+                <h2>The Cross-Specialty Pattern Legislators Should See</h2>
+                <ul>
+                    <li>Chiropractic 8-visit allowance eliminated — but Physical Therapy Fastpass preserved</li>
+                    <li>All Imaging Fastpasses eliminated — but Cardiology self-registration preserved</li>
+                    <li>Same proprietary, opaque algorithm used across both programs — no transparency</li>
+                    <li>Medicare patients have no practical post-denial recourse in either program</li>
+                    <li>Both changes announced via internal webinar only — no public notice or comment period</li>
+                    <li>Hawaii Act 151 (2025) requires PA data collection — substantive reform is the next step</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Prepared for Hawaii legislators, healthcare providers, and journalists • March 2026</p>
+            <p>Analysis by <a href="#">The King's Consult</a> — Kingdom-Minded Strategy for Healthcare Advocacy</p>
+        </div>
+    </div>
+</body>
+</html>

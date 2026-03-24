@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolent/HMSA Advanced Imaging & Cardiac — Program Changes Analysis</title>
+    <style>
+        :root{--bg-primary:#0f172a;--bg-secondary:#1e293b;--bg-elevated:#334155;--text-primary:#f1f5f9;--text-secondary:#cbd5e1;--text-muted:#94a3b8;--accent:#38bdf8;--accent-hover:#0ea5e9;--danger:#ef4444;--warning:#f59e0b;--success:#10b981;--border:rgba(148,163,184,0.2)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
+        .header{background:var(--bg-secondary);padding:1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+        .header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+        .header h1{font-size:1.4rem;font-weight:700}
+        .header p{color:var(--text-secondary);font-size:0.85rem}
+        .back-link{color:var(--accent);text-decoration:none;font-size:0.9rem;font-weight:500}
+        .back-link:hover{text-decoration:underline}
+        .container{max-width:1400px;margin:0 auto;padding:0 1.5rem}
+        .video-section{background:var(--bg-secondary);padding:1.5rem 0;position:sticky;top:85px;z-index:90;border-bottom:2px solid var(--accent)}
+        .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-radius:8px}
+        .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+        .content-section{padding:2rem 0 4rem}
+        .alert{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:flex-start}
+        .alert-icon{font-size:1.5rem;flex-shrink:0}
+        .alert h3{color:var(--danger);font-size:1rem;margin-bottom:0.25rem}
+        .alert p{color:var(--text-secondary);font-size:0.9rem}
+        .intro-text{background:var(--bg-secondary);padding:1.25rem;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:2rem}
+        .intro-text h2{font-size:1.1rem;margin-bottom:0.5rem;color:var(--accent)}
+        .intro-text p{color:var(--text-secondary);font-size:0.9rem}
+        .table-container{background:var(--bg-secondary);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+        .table-header{background:var(--bg-elevated);padding:1rem 1.5rem;border-bottom:2px solid var(--accent)}
+        .table-header h2{font-size:1.15rem;font-weight:600}
+        table{width:100%;border-collapse:collapse}
+        thead{background:var(--bg-elevated)}
+        th{text-align:left;padding:0.85rem 1.25rem;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);border-bottom:1px solid var(--border)}
+        tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;cursor:pointer}
+        tbody tr:hover{background:rgba(56,189,248,0.05)}
+        td{padding:0.85rem 1.25rem;vertical-align:top}
+        .ts{font-family:'Courier New',monospace;font-weight:600;color:var(--accent);white-space:nowrap;font-size:0.9rem}
+        .ts:hover{color:var(--accent-hover);text-decoration:underline}
+        .change{font-weight:500;color:var(--text-primary);font-size:0.925rem}
+        .problem{color:var(--text-secondary);font-size:0.9rem}
+        .icon-c{color:var(--danger)}
+        .icon-w{color:var(--warning)}
+        .icon-p{color:var(--success)}
+        .footer{background:var(--bg-secondary);padding:1.5rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem}
+        .footer p{color:var(--text-muted);font-size:0.8rem}
+        @media(max-width:768px){.header h1{font-size:1.15rem}.video-section{top:75px}th,td{padding:0.65rem 0.85rem;font-size:0.825rem}}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div><h1>🩻 Advanced Imaging &amp; Cardiac Services</h1><p>Effective April 1st • Click any timestamp to jump to that moment</p></div>
+            <a href="index.html" class="back-link">← Back to Overview</a>
+        </div>
+    </div>
+    <div class="video-section"><div class="container"><div class="video-wrapper"><div id="player"></div></div></div></div>
+    <div class="content-section"><div class="container">
+        <div class="alert"><span class="alert-icon">🚨</span><div><h3>Most Critical Change</h3><p>ALL imaging Fastpasses have been eliminated. Every MRI, CT scan, and PET scan now requires full prior authorization — even from previously trusted, high-performing providers. Clinically urgent authorizations expire in just 3 days with zero extensions allowed.</p></div></div>
+        <div class="intro-text"><h2>📋 About This Analysis</h2><p><strong>Source:</strong> Evolent HMSA Advanced Imaging &amp; Cardiac Training Video &nbsp;|&nbsp; <strong>Specialty:</strong> MRI, CT, PET Scans &amp; Cardiac Diagnostics &nbsp;|&nbsp; <strong>Purpose:</strong> Identifies the 11 most problematic changes. Click any timestamp to hear the exact quote.</p></div>
+        <div class="table-container">
+            <div class="table-header"><h2>🔴 The 11 Most Problematic Changes (Timestamped)</h2></div>
+            <table><thead><tr><th style="width:90px">Time</th><th style="width:35%">What Changed</th><th>The Problem</th></tr></thead>
+            <tbody>
+                <tr onclick="jumpToTime(636)"><td class="ts">[10:36]</td><td class="change"><span class="icon-c">🔴</span> All Imaging Fastpasses Eliminated</td><td class="problem">Every MRI, CT, PET scan now requires full PA — even from previously trusted high-performing providers. "Redesigned performance-based version" promised but no implementation date given.</td></tr>
+                <tr onclick="jumpToTime(683)"><td class="ts">[11:23]</td><td class="change"><span class="icon-c">🔴</span> Non-Cardiology Providers Face Full Review for Cardiac Studies</td><td class="problem">PCPs, internists, ER doctors ordering echos or cardiac imaging now face full clinical review. Cardiologists retain real-time approval — discriminatory treatment without clinical justification.</td></tr>
+                <tr onclick="jumpToTime(841)"><td class="ts">[14:01]</td><td class="change"><span class="icon-c">🔴</span> Proprietary Algorithm as Primary Gatekeeper</td><td class="problem">Secret algorithm makes first determination. No transparency, no accountability. For time-sensitive imaging (cancer, stroke, cardiac), algorithm delays can change clinical outcomes.</td></tr>
+                <tr onclick="jumpToTime(892)"><td class="ts">[14:52]</td><td class="change"><span class="icon-c">🔴</span> Multi-Stage Information Loop Before Denial</td><td class="problem">Two sequential rounds of info requests before denial. Each round adds business days. For suspected malignancy or cardiac ischemia, 3-5 day delays change outcomes.</td></tr>
+                <tr onclick="jumpToTime(483)"><td class="ts">[8:03]</td><td class="change"><span class="icon-c">🔴</span> Peer-to-Peer is Consultative Only</td><td class="problem">Calling Evolent does not reverse denial. Consultative only — denial path locked once algorithm and reviewer decide. Same limitation as chiropractic program.</td></tr>
+                <tr onclick="jumpToTime(548)"><td class="ts">[9:08]</td><td class="change"><span class="icon-c">🔴</span> Medicare Patients Have No Post-Denial Path</td><td class="problem">No recourse once denial issued. Providers must act on peer-to-peer BEFORE denial — window easily missed. Seniors most at risk; only recourse is longer HMSA formal appeal.</td></tr>
+                <tr onclick="jumpToTime(377)"><td class="ts">[6:17]</td><td class="change"><span class="icon-c">🔴</span> Urgent Auth = 3 Days Validity, NO Extensions</td><td class="problem">Most time-sensitive cases get shortest window with zero flexibility. If facility can't schedule within 3 days, authorization expires and provider must restart entire process.</td></tr>
+                <tr onclick="jumpToTime(431)"><td class="ts">[7:11]</td><td class="change"><span class="icon-c">🔴</span> Secondary Insurance Requires Auth Even When HMSA is Secondary</td><td class="problem">Medicare Advantage + HMSA secondary = double authorization for single imaging study. Even after Medicare authorizes and pays, HMSA still requires separate Evolent auth.</td></tr>
+                <tr onclick="jumpToTime(714)"><td class="ts">[11:54]</td><td class="change"><span class="icon-p">🟢</span> Code Descoping (Positive Change)</td><td class="problem">Some CPT codes removed from PA requirement — genuine burden reduction. But specific codes NOT disclosed in training; providers must check utilization matrices manually.</td></tr>
+                <tr onclick="jumpToTime(2285)"><td class="ts">[38:05]</td><td class="change"><span class="icon-c">🔴</span> Rendering Provider Must Be in System or Auth Cannot Proceed</td><td class="problem">If imaging facility not in Evolent's RADMD system, provider cannot submit auth online — must call. Disadvantages independent, small, and rural facilities while favoring large health systems.</td></tr>
+                <tr onclick="jumpToTime(2244)"><td class="ts">[37:24]</td><td class="change"><span class="icon-c">🔴</span> Cardiac/Radiology Combination Studies Prohibited</td><td class="problem">Patient needing both cardiac and non-cardiac imaging requires TWO separate auth requests — each with own documentation, review cycle, and delays. Administrative decision, not clinical.</td></tr>
+            </tbody></table>
+        </div>
+    </div></div>
+    <div class="footer"><div class="container"><p>Analysis prepared for Hawaii legislators, referring providers, and imaging centers • March 2026</p><p>Source: Evolent HMSA Advanced Imaging &amp; Cardiac Services Training Video</p></div></div>
+    <script>
+        var player;var tag=document.createElement('script');tag.src="https://www.youtube.com/iframe_api";document.getElementsByTagName('script')[0].parentNode.insertBefore(tag,document.getElementsByTagName('script')[0]);
+        function onYouTubeIframeAPIReady(){player=new YT.Player('player',{height:'100%',width:'100%',videoId:'WG7P0iOvUNc',playerVars:{playsinline:1,rel:0,modestbranding:1},events:{onReady:function(){}}})}
+        function jumpToTime(s){if(player&&player.seekTo){player.seekTo(s,true);player.playVideo();window.scrollTo({top:0,behavior:'smooth'})}}
+    </script>
+</body>
+</html>
