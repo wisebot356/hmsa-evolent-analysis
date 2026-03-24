@@ -15,71 +15,110 @@
         .back-link{color:var(--accent);text-decoration:none;font-size:0.9rem;font-weight:500}
         .back-link:hover{text-decoration:underline}
         .container{max-width:1400px;margin:0 auto;padding:0 1.5rem}
-        .video-section{background:var(--bg-secondary);padding:1.5rem 0;position:sticky;top:85px;z-index:90;border-bottom:2px solid var(--accent)}
+
+        /* Desktop: side-by-side layout */
+        .split-layout{display:flex;gap:1.5rem;padding:1.5rem;max-width:1400px;margin:0 auto}
+        .split-left{flex:0 0 40%;position:sticky;top:85px;align-self:flex-start;z-index:90}
+        .split-right{flex:1;min-width:0}
+
         .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-radius:8px}
         .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
-        .content-section{padding:2rem 0 4rem}
-        .alert{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:flex-start}
+        .video-info{background:var(--bg-secondary);border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;border:1px solid var(--border)}
+        .video-info h3{color:var(--danger);font-size:0.95rem;margin-bottom:0.4rem}
+        .video-info p{color:var(--text-secondary);font-size:0.85rem}
+
+        .alert{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:1rem;align-items:flex-start}
         .alert-icon{font-size:1.5rem;flex-shrink:0}
         .alert h3{color:var(--danger);font-size:1rem;margin-bottom:0.25rem}
         .alert p{color:var(--text-secondary);font-size:0.9rem}
-        .intro-text{background:var(--bg-secondary);padding:1.25rem;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:2rem}
-        .intro-text h2{font-size:1.1rem;margin-bottom:0.5rem;color:var(--accent)}
-        .intro-text p{color:var(--text-secondary);font-size:0.9rem}
+
+        .click-hint{background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;gap:0.75rem;align-items:center}
+        .click-hint-icon{font-size:1.3rem;flex-shrink:0}
+        .click-hint p{color:var(--accent);font-size:0.9rem;font-weight:500}
+        .click-hint span{color:var(--text-secondary);font-weight:400}
+
         .table-container{background:var(--bg-secondary);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
-        .table-header{background:var(--bg-elevated);padding:1rem 1.5rem;border-bottom:2px solid var(--accent)}
-        .table-header h2{font-size:1.15rem;font-weight:600}
+        .table-header{background:var(--bg-elevated);padding:1rem 1.25rem;border-bottom:2px solid var(--accent)}
+        .table-header h2{font-size:1.1rem;font-weight:600}
         table{width:100%;border-collapse:collapse}
         thead{background:var(--bg-elevated)}
-        th{text-align:left;padding:0.85rem 1.25rem;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);border-bottom:1px solid var(--border)}
+        th{text-align:left;padding:0.75rem 1rem;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);border-bottom:1px solid var(--border)}
         tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;cursor:pointer}
-        tbody tr:hover{background:rgba(56,189,248,0.05)}
-        td{padding:0.85rem 1.25rem;vertical-align:top}
+        tbody tr:hover{background:rgba(56,189,248,0.08)}
+        tbody tr.active{background:rgba(56,189,248,0.15);border-left:3px solid var(--accent)}
+        td{padding:0.75rem 1rem;vertical-align:top}
         .ts{font-family:'Courier New',monospace;font-weight:600;color:var(--accent);white-space:nowrap;font-size:0.9rem}
         .ts:hover{color:var(--accent-hover);text-decoration:underline}
-        .change{font-weight:500;color:var(--text-primary);font-size:0.925rem}
-        .problem{color:var(--text-secondary);font-size:0.9rem}
+        .change{font-weight:500;color:var(--text-primary);font-size:0.9rem}
+        .problem{color:var(--text-secondary);font-size:0.85rem}
         .icon-c{color:var(--danger)}
         .icon-w{color:var(--warning)}
         .icon-p{color:var(--success)}
-        .footer{background:var(--bg-secondary);padding:1.5rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem}
+        .footer{background:var(--bg-secondary);padding:1.5rem;text-align:center;border-top:1px solid var(--border);margin-top:2rem}
         .footer p{color:var(--text-muted);font-size:0.8rem}
-        @media(max-width:768px){.header h1{font-size:1.15rem}.video-section{top:75px}th,td{padding:0.65rem 0.85rem;font-size:0.825rem}}
+
+        /* Mobile: stack everything */
+        @media(max-width:700px){
+            .split-layout{flex-direction:column;padding:0}
+            .split-left{position:relative;top:auto;flex:none;padding:1rem 1.5rem;background:var(--bg-secondary);border-bottom:2px solid var(--accent)}
+            .split-right{padding:1.5rem}
+            .video-info{margin-top:0.75rem}
+            .header h1{font-size:1.15rem}
+            th,td{padding:0.65rem 0.85rem;font-size:0.825rem}
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <div><h1>🦴 Physical Medicine — Chiropractic &amp; OT</h1><p>Effective April 1st • Click any timestamp to jump to that moment</p></div>
+            <div><h1>🦴 Physical Medicine — Chiropractic &amp; OT</h1><p>Effective April 1st</p></div>
             <a href="index.html" class="back-link">← Back to Overview</a>
         </div>
     </div>
-    <div class="video-section"><div class="container"><div class="video-wrapper"><div id="player"></div></div></div></div>
-    <div class="content-section"><div class="container">
-        <div class="alert"><span class="alert-icon">🚨</span><div><h3>Most Critical Change</h3><p>The 8 unmanaged visits that previously allowed chiropractic and OT patients immediate access have been completely eliminated. Every single visit after the initial evaluation now requires prior authorization from Evolent — while Physical Therapy's Fastpass remains intact.</p></div></div>
-        <div class="intro-text"><h2>📋 About This Analysis</h2><p><strong>Source:</strong> Evolent HMSA Physical Medicine Training Video &nbsp;|&nbsp; <strong>Specialty:</strong> Chiropractic &amp; Occupational Therapy &nbsp;|&nbsp; <strong>Purpose:</strong> Identifies the 10 most problematic changes. Click any timestamp to hear the exact quote.</p></div>
-        <div class="table-container">
-            <div class="table-header"><h2>🔴 The 10 Most Problematic Changes (Timestamped)</h2></div>
-            <table><thead><tr><th style="width:90px">Time</th><th style="width:35%">What Changed</th><th>The Problem</th></tr></thead>
-            <tbody>
-                <tr onclick="jumpToTime(694)"><td class="ts">[11:34]</td><td class="change"><span class="icon-c">🔴</span> 8 Unmanaged Visits Eliminated for Chiro/OT</td><td class="problem">Every visit after initial eval now requires PA from Evolent. Patients who previously had 8 automatic visits now face authorization delays from visit #2 onward. Massive new barrier to care continuity.</td></tr>
-                <tr onclick="jumpToTime(758)"><td class="ts">[12:38]</td><td class="change"><span class="icon-c">🔴</span> PT Fastpass Preserved — Chiro/OT Not</td><td class="problem">Physical therapy retains its streamlined Fastpass while chiropractic and OT lose theirs. No clinical justification provided. Discriminatory treatment between equivalent physical medicine disciplines.</td></tr>
-                <tr onclick="jumpToTime(790)"><td class="ts">[13:10]</td><td class="change"><span class="icon-c">🔴</span> Proprietary Algorithm Decides First</td><td class="problem">A secret, proprietary algorithm — not the treating clinician — makes the initial determination on every authorization. No transparency, no accountability, no way for providers to audit or challenge the logic.</td></tr>
-                <tr onclick="jumpToTime(516)"><td class="ts">[8:36]</td><td class="change"><span class="icon-c">🔴</span> Peer-to-Peer = Consultation Only</td><td class="problem">Calling Evolent's physician reviewer does not automatically reverse a denial. It is consultative — the denial path is effectively locked once the algorithm and reviewer have decided.</td></tr>
-                <tr onclick="jumpToTime(587)"><td class="ts">[9:47]</td><td class="change"><span class="icon-c">🔴</span> Medicare: No Reconsideration After Denial</td><td class="problem">For Medicare patients, there is essentially no recourse once denial is issued through Evolent. Providers must intervene BEFORE the denial letter — a window easily missed by busy practices. Seniors most at risk.</td></tr>
-                <tr onclick="jumpToTime(415)"><td class="ts">[6:55]</td><td class="change"><span class="icon-w">🟡</span> 10-Day Retroactive Authorization Window</td><td class="problem">Providers have only 10 business days to submit a retroactive authorization. Miss the window and you must submit a manual retro form with risk of non-payment. Imaging program gets 365 days — chiro gets 10.</td></tr>
-                <tr onclick="jumpToTime(1362)"><td class="ts">[22:42]</td><td class="change"><span class="icon-c">🔴</span> Partial Approvals Are Normal</td><td class="problem">Provider requests 14 visits, Evolent approves 3. Care is interrupted mid-treatment. Patients face gaps in care while providers scramble to re-authorize for the remaining visits.</td></tr>
-                <tr onclick="jumpToTime(1547)"><td class="ts">[25:47]</td><td class="change"><span class="icon-c">🔴</span> Overlapping Auth = Automatic Denial</td><td class="problem">If a patient transfers from one chiropractor to another, the prior provider must formally close their authorization case before the new provider can get approved. Patients caught in administrative limbo between providers.</td></tr>
-                <tr onclick="jumpToTime(480)"><td class="ts">[8:00]</td><td class="change"><span class="icon-c">🔴</span> Secondary Payer (HMSA) Still Needs Auth</td><td class="problem">Medicare Advantage patients with HMSA as secondary payer are caught in a dual-authorization trap — even after Medicare authorizes and pays, HMSA secondary payment still requires separate Evolent authorization.</td></tr>
-                <tr onclick="jumpToTime(657)"><td class="ts">[10:57]</td><td class="change"><span class="icon-w">🟡</span> Each Body Part = Separate Authorization</td><td class="problem">Patient with neck AND low back pain needs two separate authorization requests — each with its own documentation, review cycle, and potential for denial. More patients = exponentially more paperwork.</td></tr>
-            </tbody></table>
+
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="video-wrapper"><div id="player"></div></div>
+            <div class="video-info">
+                <h3>🚨 Most Critical Change</h3>
+                <p>The 8 unmanaged visits that previously allowed chiropractic and OT patients immediate access have been completely eliminated. Every single visit after the initial evaluation now requires prior authorization from Evolent — while Physical Therapy's Fastpass remains intact.</p>
+            </div>
         </div>
-    </div></div>
+
+        <div class="split-right">
+            <div class="click-hint">
+                <span class="click-hint-icon">👆</span>
+                <p>Click any blue timestamp below to jump directly to that moment in the video. <span>The video will automatically play from that point so you can hear the exact quote.</span></p>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header"><h2>🔴 The 10 Most Problematic Changes</h2></div>
+                <table><thead><tr><th style="width:80px">Time</th><th style="width:35%">What Changed</th><th>The Problem</th></tr></thead>
+                <tbody>
+                    <tr onclick="jumpToTime(694,this)"><td class="ts">[11:34]</td><td class="change"><span class="icon-c">🔴</span> 8 Unmanaged Visits Eliminated for Chiro/OT</td><td class="problem">Every visit after initial eval now requires PA from Evolent. Patients who previously had 8 automatic visits now face authorization delays from visit #2 onward. Massive new barrier to care continuity.</td></tr>
+                    <tr onclick="jumpToTime(758,this)"><td class="ts">[12:38]</td><td class="change"><span class="icon-c">🔴</span> PT Fastpass Preserved — Chiro/OT Not</td><td class="problem">Physical therapy retains its streamlined Fastpass while chiropractic and OT lose theirs. No clinical justification provided. Discriminatory treatment between equivalent physical medicine disciplines.</td></tr>
+                    <tr onclick="jumpToTime(790,this)"><td class="ts">[13:10]</td><td class="change"><span class="icon-c">🔴</span> Proprietary Algorithm Decides First</td><td class="problem">A secret, proprietary algorithm — not the treating clinician — makes the initial determination on every authorization. No transparency, no accountability, no way for providers to audit or challenge the logic.</td></tr>
+                    <tr onclick="jumpToTime(516,this)"><td class="ts">[8:36]</td><td class="change"><span class="icon-c">🔴</span> Peer-to-Peer = Consultation Only</td><td class="problem">Calling Evolent's physician reviewer does not automatically reverse a denial. It is consultative — the denial path is effectively locked once the algorithm and reviewer have decided.</td></tr>
+                    <tr onclick="jumpToTime(587,this)"><td class="ts">[9:47]</td><td class="change"><span class="icon-c">🔴</span> Medicare: No Reconsideration After Denial</td><td class="problem">For Medicare patients, there is essentially no recourse once denial is issued through Evolent. Providers must intervene BEFORE the denial letter — a window easily missed by busy practices. Seniors most at risk.</td></tr>
+                    <tr onclick="jumpToTime(415,this)"><td class="ts">[6:55]</td><td class="change"><span class="icon-w">🟡</span> 10-Day Retroactive Authorization Window</td><td class="problem">Providers have only 10 business days to submit a retroactive authorization. Miss the window and you must submit a manual retro form with risk of non-payment. Imaging program gets 365 days — chiro gets 10.</td></tr>
+                    <tr onclick="jumpToTime(1362,this)"><td class="ts">[22:42]</td><td class="change"><span class="icon-c">🔴</span> Partial Approvals Are Normal</td><td class="problem">Provider requests 14 visits, Evolent approves 3. Care is interrupted mid-treatment. Patients face gaps in care while providers scramble to re-authorize for the remaining visits.</td></tr>
+                    <tr onclick="jumpToTime(1547,this)"><td class="ts">[25:47]</td><td class="change"><span class="icon-c">🔴</span> Overlapping Auth = Automatic Denial</td><td class="problem">If a patient transfers from one chiropractor to another, the prior provider must formally close their authorization case before the new provider can get approved. Patients caught in administrative limbo between providers.</td></tr>
+                    <tr onclick="jumpToTime(480,this)"><td class="ts">[8:00]</td><td class="change"><span class="icon-c">🔴</span> Secondary Payer (HMSA) Still Needs Auth</td><td class="problem">Medicare Advantage patients with HMSA as secondary payer are caught in a dual-authorization trap — even after Medicare authorizes and pays, HMSA secondary payment still requires separate Evolent authorization.</td></tr>
+                    <tr onclick="jumpToTime(657,this)"><td class="ts">[10:57]</td><td class="change"><span class="icon-w">🟡</span> Each Body Part = Separate Authorization</td><td class="problem">Patient with neck AND low back pain needs two separate authorization requests — each with its own documentation, review cycle, and potential for denial. More patients = exponentially more paperwork.</td></tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+
     <div class="footer"><div class="container"><p>Analysis prepared for Hawaii legislators, referring providers, and chiropractors • March 2026</p><p>Source: Evolent HMSA Physical Medicine Training Video</p></div></div>
     <script>
         var player;var tag=document.createElement('script');tag.src="https://www.youtube.com/iframe_api";document.getElementsByTagName('script')[0].parentNode.insertBefore(tag,document.getElementsByTagName('script')[0]);
         function onYouTubeIframeAPIReady(){player=new YT.Player('player',{height:'100%',width:'100%',videoId:'4JDWkRq_Ma4',playerVars:{playsinline:1,rel:0,modestbranding:1},events:{onReady:function(){}}})}
-        function jumpToTime(s){if(player&&player.seekTo){player.seekTo(s,true);player.playVideo();window.scrollTo({top:0,behavior:'smooth'})}}
+        function jumpToTime(s,row){
+            if(player&&player.seekTo){player.seekTo(s,true);player.playVideo()}
+            document.querySelectorAll('tbody tr').forEach(function(r){r.classList.remove('active')});
+            if(row)row.classList.add('active');
+        }
     </script>
 </body>
 </html>
